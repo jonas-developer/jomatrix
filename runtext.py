@@ -4,7 +4,7 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 import time
 
 
-def run(self):
+def run(text):
     options = RGBMatrixOptions()
 
     options.hardware_mapping = "adafruit-hat"
@@ -32,7 +32,7 @@ def run(self):
     font.LoadFont("./fonts/7x13.bdf")
     textColor = graphics.Color(255, 255, 0)
     pos = offscreen_canvas.width
-    my_text = self.args.text
+    my_text = text
 
     while True:
         offscreen_canvas.Clear()

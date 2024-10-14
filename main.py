@@ -1,5 +1,6 @@
 # import main Flask class and request object
 from flask import Flask, request
+from runtext import run
 import os
 
 # create the Flask app
@@ -11,7 +12,7 @@ app = Flask(__name__)
 def json_example():
     request_data = request.get_json()
     if request_data["type"] == "msg":
-        os.system('python runtext.py -t "'+ request_data["text"]+ '"')
+        run(request_data["text"])
     elif request_data["type"] == "image":
         os.system('')
 
