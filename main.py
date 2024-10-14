@@ -11,9 +11,9 @@ app = Flask(__name__)
 def json_example():
     request_data = request.get_json()
     if request_data["type"] == "msg":
-        os.system('erase %temp%\\msg.vbs & echo msgbox"' + request_data["text"] + '",vbInformation , "' + request_data["text"] + '"> %temp%\\msg.vbs & start %temp%\\msg.vbs')
+        os.system('python ./runtext.py -c 2 -t'+ request_data["text"])
     elif request_data["type"] == "image":
-        os.system('powershell -Command "Invoke-WebRequest ' +  request_data["text"] +' -OutFile bild.jpg')
+        os.system('')
 
     return "ok"
 
