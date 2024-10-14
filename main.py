@@ -11,7 +11,7 @@ app = Flask(__name__)
 def json_example():
     request_data = request.get_json()
     if request_data["type"] == "msg":
-        os.system('python ./runtext.py -c 2 -t'+ request_data["text"])
+        os.system('python runtext.py -t'+ request_data["text"])
     elif request_data["type"] == "image":
         os.system('')
 
